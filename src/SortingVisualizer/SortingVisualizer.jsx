@@ -1,5 +1,6 @@
 import React from 'react';
 import './SortingVisualizer.css';
+import {mergeSort} from '../sortingAlgorithms/sortingAlgorithms.js';
 
 
 export default class SortingVisualizer extends React.Component {
