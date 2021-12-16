@@ -24,6 +24,8 @@ export default class SortingVisualizer extends React.Component {
     }
 
     mergeSort() {
+        const javaSciptSortedArray = this.state.array.slice().sort();
+        const sortedArray = this.mergeSort(this.state.array);
 
     }
 
@@ -50,4 +52,10 @@ export default class SortingVisualizer extends React.Component {
 function randomIntFromInterval(min, max) {
     // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function testEqual(arrayOne, arrayTwo) {
+    if (arrayOne.length !== arrayTwo.length) {
+        return false;
+    }
 }
