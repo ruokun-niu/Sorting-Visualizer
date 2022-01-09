@@ -1,4 +1,4 @@
-export const mergeSort = array => {
+export const mergeSortoriginal = (array, animations = []) => {
   if (array.length === 1) {
     return array;
   }
@@ -25,7 +25,35 @@ export const mergeSort = array => {
     sortedArray.push(rightHalf[j]);
     j++;
   }
-  return sortedArray
+  return sortedArray;
+}
+
+
+export function mergeSort(array) {
+  const animations = [];
+  if (array.length <= 1) {
+    return array;
+  }
+  const arrCopy = array.slice();
+  mergeSortHelper(array, 0, array.length - 1, arrCopy, animations);
+  return animations;
+}
+
+function mergeSortHelper(mainArray, startIdx, endIdx, auxArray, animations) {
+  if (startIdx === endIdx) {
+    return;
+  }
+  const middleIdx = Math.floor((startIdx + endIdx) / 2);
+  mergeSortHelper(auxArray, startIdx, middleIdx, mainArray, animations);
+  mergeSortHelper(auxArray, middleIdx + 1, endIdx, mainArray, animations);
+}
+
+
+function doMerge(mainArray, startIdx, middleIdx, endIdx, auxArray, animations) {
+   let k = startIdx;
+   let i = startIdx;
+   let j = middleIdx + 1;
+   
 }
 /*const mergeSort = arr => {
   if (arr.length <= 1) return arr;
